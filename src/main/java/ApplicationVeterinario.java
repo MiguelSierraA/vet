@@ -4,13 +4,14 @@ import clases.Veterinario;
 import enumn.TipoMascota;
 import enumn.TipoServicio;
 
+import javax.swing.*;
+
+
 public class ApplicationVeterinario {
 
     public static void main(String[] args) {
 
         Veterinario veterinario = new Veterinario();
-
-        Cliente clienten = new Cliente("nuevo", "Colombia", 95122120L);
 
         Cliente cliente = new Cliente("Jose", "Bogota", 9564120L);
         cliente.createMascota("Lulu", 7, TipoMascota.PERROS);
@@ -21,12 +22,37 @@ public class ApplicationVeterinario {
         Mascota mascota1 = new Mascota("Firu",8, TipoMascota.AVES);
         mascota1.createService(TipoServicio.PELUQUERIA,26500);
 
+
         veterinario.createCliente(cliente);
         veterinario.createCliente(cliente2);
+        veterinario.createMascota(mascota1);
 
-        System.out.println("cliente = " + cliente);
-        System.out.println("cliente2 = " + cliente2);
-        System.out.println("mascota = " + mascota1);
-        System.out.println("ClienteSolo = " + clienten);
+//        System.out.println(veterinario.mostrarClientes());
+//        System.out.println("##################");
+//        System.out.println(veterinario.mostrarMascotas());
+
+        int select = -1;
+        while (select != 0) {
+            try {
+                String veterinaria = JOptionPane.showInputDialog(null, "Elige una opción:\n" +
+                        "1.- Mostrar Clientes\n" +
+                        "2.- Mostrar Mascotas\n" +
+                        "0.- Salir");
+                select = Integer.parseInt(veterinaria);
+
+                switch (select) {
+                    case 1:
+                        JOptionPane.showMessageDialog(null, veterinario.mostrarClientes());
+                        break;
+                    case 2:
+                        JOptionPane.showMessageDialog(null, veterinario.mostrarMascotas());
+                        break;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "info no encontrada");
+            }
+
+        }
+
     }
 }

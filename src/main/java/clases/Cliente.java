@@ -2,9 +2,6 @@ package clases;
 
 
 import enumn.TipoMascota;
-import enumn.TipoServicio;
-
-import java.security.Provider;
 
 public class Cliente {
 
@@ -27,14 +24,11 @@ public class Cliente {
     }
 
 
+
     @Override
     public String toString() {
-        return "Cliente{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telephone=" + telephone +
-                ", mascota=" + mascota +
-                '}';
+        return "Cliente = " + name + " - " + address + " - " + telephone + "\n"
+                + mascota;
     }
 
 

@@ -14,10 +14,8 @@ public class Servicio {
 
     @Override
     public String toString() {
-        return "Servicio{" +
-                "tipoServicio=" + tipoServicio +
-                ", price=" + price +
-                '}';
+        return " " + tipoServicio.getNombre() +
+                " y su precio es =" + price;
     }
 
     public TipoServicio getTipoServicio() {

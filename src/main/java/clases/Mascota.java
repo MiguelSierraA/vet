@@ -3,6 +3,7 @@ package clases;
 import enumn.TipoMascota;
 import enumn.TipoServicio;
 
+
 public class Mascota {
 
     private String name;
@@ -14,7 +15,6 @@ public class Mascota {
         this.name = name;
         this.edad = edad;
         this.tipoMascota = tipoMascota;
-
     }
 
     public Mascota(String name, int edad, TipoMascota tipoMascota, Servicio servicio) {
@@ -25,20 +25,19 @@ public class Mascota {
     }
 
 
-
     public void createService(TipoServicio tipoServicio, float price){
         this.servicio = new Servicio(tipoServicio, price);
 
     }
 
+
     @Override
     public String toString() {
-        return "Mascota{" +
-                "name='" + name + '\'' +
-                ", edad=" + edad +
-                ", tipoMascota=" + tipoMascota +
-                ", servicio=" + servicio +
-                '}';
+        return "Mascota " +
+                "Su nombre es " + name + " - tiene "
+                + edad + " años " +
+                " y es un " + tipoMascota.getNombre() +
+                " servicio " + servicio;
     }
 
     public String getName() {
