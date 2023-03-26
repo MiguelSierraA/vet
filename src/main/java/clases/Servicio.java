@@ -12,6 +12,14 @@ public class Servicio {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Servicio{" +
+                "tipoServicio=" + tipoServicio +
+                ", price=" + price +
+                '}';
+    }
+
     public TipoServicio getTipoServicio() {
         return tipoServicio;
     }

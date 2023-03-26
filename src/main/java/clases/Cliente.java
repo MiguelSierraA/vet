@@ -2,6 +2,7 @@ package clases;
 
 
 import enumn.TipoMascota;
+import enumn.TipoServicio;
 
 import java.security.Provider;
 
@@ -19,10 +20,12 @@ public class Cliente {
         this.mascota = mascota;
     }
 
-    public void createMascota(String name, int edad, TipoMascota tipoMascota, Servicio servicio){
-        this.mascota = new Mascota(name, edad, tipoMascota, servicio);
+
+    public void createMascota(String name, int edad, TipoMascota tipoMascota) {
+        this.mascota = new Mascota(name, edad, tipoMascota);
 
     }
+
 
     @Override
     public String toString() {
@@ -33,4 +36,6 @@ public class Cliente {
                 ", mascota=" + mascota +
                 '}';
     }
+
+
 }
