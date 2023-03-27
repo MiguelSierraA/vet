@@ -5,6 +5,7 @@ import enumn.TipoMascota;
 import enumn.TipoServicio;
 
 import javax.swing.*;
+import java.util.Objects;
 
 
 public class ApplicationVeterinario {
@@ -37,6 +38,8 @@ public class ApplicationVeterinario {
                 String veterinaria = JOptionPane.showInputDialog(null, "Elige una opción:\n" +
                         "1.- Mostrar Clientes\n" +
                         "2.- Mostrar Mascotas\n" +
+                        "3.- Buscar Cliente \n" +
+                        "4.- Buscar Mascota \n" +
                         "0.- Salir");
                 select = Integer.parseInt(veterinaria);
 
@@ -46,6 +49,14 @@ public class ApplicationVeterinario {
                         break;
                     case 2:
                         JOptionPane.showMessageDialog(null, veterinario.mostrarMascotas());
+                        break;
+                    case 3:
+                        String name = JOptionPane.showInputDialog(null,"Ingrese nombre de cliente");
+                        JOptionPane.showMessageDialog(null,veterinario.buscarCliente(name));
+                        break;
+                    case 4:
+                        String nombre = JOptionPane.showInputDialog(null,"Ingrese nombre de mascota");
+                        JOptionPane.showMessageDialog(null,veterinario.buscarMascota(nombre));
                         break;
                 }
             } catch (Exception e) {

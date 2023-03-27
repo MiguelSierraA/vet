@@ -27,7 +27,6 @@ public class Veterinario {
 
     }
 
-
     public String mostrarClientes(){
         String result= "";
         for (int i = 0; i < this.clienteList.size(); i++) {
@@ -43,4 +42,39 @@ public class Veterinario {
         }
         return result;
     }
+
+    public String buscarCliente(String name) {
+        Cliente clienteTemp = null;
+        for (Cliente client : this.clienteList) {
+            if (client.getName().equals(name)) {
+                clienteTemp = client;
+                return ("Cliente se encuenta en la base");
+            }
+
+        }
+        if (clienteTemp != null) {
+            return mostrarClientes();
+        }else{
+            return ("El cliente no existe !!");
+        }
+
+    }
+
+    public String buscarMascota(String name) {
+        Mascota mascotaTemp = null;
+        for (Mascota mascota : this.listaMascotas) {
+            if (mascota.getName().equals(name)) {
+                mascotaTemp = mascota;
+                return ("Mascota se encuenta en la base");
+            }
+
+        }
+        if (mascotaTemp != null) {
+            return ("no hay nada en la");
+        }else{
+            return ("Mascota no existe !!");
+        }
+
+    }
+
 }
